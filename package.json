@@ -1,0 +1,71 @@
+{
+  "name": "@fungi.computer/parakeet-testing",
+  "version": "0.0.0",
+  "description": "Test-only garden extension and slash-parity fixtures for a typed Shiitake Session, shared by every Parakeet-protocol renderer's tests",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs/api",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "eslint src test --max-warnings=0 && ../../node_modules/.bin/oxlint --config ../../oxlint.config.ts --deny-warnings src test",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "pnpm run clean && tsc -p tsconfig.build.json",
+    "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\"",
+    "test": "vitest run",
+    "docs": "tsx ../../tooling/repository/src/docs/cli.ts check --root ../..",
+    "docs:write": "tsx ../../tooling/repository/src/docs/cli.ts write --root ../..",
+    "format:check": "node ../../tooling/repository/scripts/format-package-check.mjs",
+    "lint:anti-slop": "node ../../tooling/repository/scripts/lint-package-anti-slop.mjs"
+  },
+  "dependencies": {
+    "@fungi.computer/shiitake": "workspace:*",
+    "@fungi.computer/whistle": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  },
+  "license": "MIT",
+  "botanical": {
+    "role": "package",
+    "operations": {
+      "lint": "required",
+      "typecheck": "required",
+      "build": "required",
+      "test": "required",
+      "docs": "required",
+      "pack": {
+        "status": "not-applicable",
+        "reason": "Test-only fixtures for workspace renderers, like the Parakeet source it was split from; shared pack tooling not yet wired for this package"
+      },
+      "smoke": {
+        "status": "not-applicable",
+        "reason": "No runtime entry point beyond the typed fixtures its own test and consumers exercise"
+      },
+      "stranger": {
+        "status": "not-applicable",
+        "reason": "Shared stranger consumer proof not yet wired for this package, like the Parakeet source it was split from"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fungi-computer/parakeet-testing.git"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "lib": ["ES2022"],
+    "declaration": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["node", "vitest/globals"],
+    "baseUrl": ".",
+    "paths": {
+      "@fungi.computer/parakeet-testing": ["./src/index.ts"]
+    }
+  },
+  "include": ["src", "test"]
+}
