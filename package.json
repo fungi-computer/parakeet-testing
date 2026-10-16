@@ -1,6 +1,7 @@
 {
   "name": "@fungi.computer/parakeet-testing",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "Levi <levi@technomancy.dev>",
   "description": "Test-only garden extension and slash-parity fixtures for a typed Shiitake Session, shared by every Parakeet-protocol renderer's tests",
   "type": "module",
   "main": "./dist/index.js",
