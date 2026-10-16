@@ -1,5 +1,21 @@
 # @fungi.computer/parakeet-testing
 
+## 0.1.0
+
+### Minor Changes
+
+- Changes since 0.0.1:
+
+  - fix(cli): polish help, diagnostics and slash commands
+  - feat(oyster): public release 0.1.0
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @fungi.computer/shiitake@0.2.0
+  - @fungi.computer/whistle@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes

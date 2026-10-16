@@ -137,7 +137,7 @@ export type SlashParityCase = Readonly<{
  * garden extension. Renderers type each draft and compare the rows they draw.
  */
 export const slashParityCases: readonly SlashParityCase[] = [
-  { draft: "/", rows: ["/water"] },
+  { draft: "/", rows: ["/help", "/water"] },
   { draft: "/w", rows: ["/water"] },
   { draft: "/wtr", rows: ["/water"] },
   { draft: "/e", rows: ["/water"] },
