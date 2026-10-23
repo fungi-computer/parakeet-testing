@@ -1,5 +1,14 @@
 # @fungi.computer/parakeet-testing
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @fungi.computer/shiitake@0.3.0
+  - @fungi.computer/whistle@0.1.0
+
 ## 0.1.0
 
 ### Minor Changes
