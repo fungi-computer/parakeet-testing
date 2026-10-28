@@ -1,5 +1,22 @@
 # @fungi.computer/parakeet-testing
 
+## 0.2.0
+
+### Minor Changes
+
+- Changes since 0.1.4:
+
+  - feat(parakeet): answer tool approvals in the composer on the terminal and
+    the web
+  - feat(parakeet): answer questions in the composer on the terminal and the web
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @fungi.computer/shiitake@0.6.0
+  - @fungi.computer/whistle@0.3.0
+
 ## 0.1.4
 
 ### Patch Changes

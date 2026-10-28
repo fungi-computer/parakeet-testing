@@ -19,6 +19,45 @@ type SlashParityCase = Readonly<{
 
 One input every renderer must complete identically.
 
+---
+
+### AwaitingFixtureState
+
+```ts
+type AwaitingFixtureState = Readonly<{
+  highlight: number;
+  toggled: ReadonlySet<string>;
+  other: string;
+  phase: "choose" | "other" | "confirm" | "sending" | "refused";
+  refusal?: string;
+  details: boolean;
+}>;
+```
+
+The state of one decision a fixture holds, shaped like the Parakeet reducer's.
+
+---
+
+### AwaitingFixture
+
+```ts
+type AwaitingFixture = Readonly<{
+  name: string;
+  kind: "question" | "approval";
+  prompt: Extract<
+    WhistlePrompt,
+    {
+      type: "decision";
+    }
+  >;
+  state: AwaitingFixtureState;
+  position: number;
+  total: number;
+}>;
+```
+
+One decision shown at one moment, held identically by every renderer's test.
+
 ## Variables
 
 ### idleActivity
@@ -80,6 +119,17 @@ The flow every renderer runs: `/water`, choose the fern bed, see the result.
 | <a id="property-prompt"></a> `prompt` | `"Which bed?"`            | `"Which bed?"`            |
 | <a id="property-choose"></a> `choose` | `"Fern bed"`              | `"Fern bed"`              |
 | <a id="property-notice"></a> `notice` | `"Watered the fern bed."` | `"Watered the fern bed."` |
+
+---
+
+### awaitingFixtures
+
+```ts
+const awaitingFixtures: readonly AwaitingFixture[];
+```
+
+The decisions every renderer must draw the same way. Each Parakeet renderer
+renders every fixture and holds its output to `decisionView`.
 
 ## Functions
 
