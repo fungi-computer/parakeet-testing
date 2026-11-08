@@ -6,14 +6,12 @@ renderer can exercise the same extension and slash-completion cases.
 
 ## Install or set up
 
-This package provides shared test fixtures, not a runtime dependency of shipped
-renderers. From the repository root, build it with:
-
 ```sh
-pnpm turbo:run run build --filter=@fungi.computer/parakeet-testing
+npm install --save-dev @fungi.computer/parakeet-testing
 ```
 
-Import fixtures from `@fungi.computer/parakeet-testing` in workspace test code.
+These are test fixtures, not a runtime dependency of a shipped renderer. Import
+them from `@fungi.computer/parakeet-testing` in your renderer's tests.
 
 ## Quick start
 
