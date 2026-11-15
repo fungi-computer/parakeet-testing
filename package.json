@@ -1,6 +1,6 @@
 {
   "name": "@fungi.computer/parakeet-testing",
-  "version": "0.2.25",
+  "version": "0.2.26",
   "author": "Levi <levi@technomancy.dev>",
   "description": "Test-only garden extension and slash-parity fixtures for a typed Shiitake Session, shared by every Parakeet-protocol renderer's tests",
   "type": "module",
@@ -19,19 +19,13 @@
     "LICENSE"
   ],
   "scripts": {
-    "lint": "eslint src test --max-warnings=0 && ../../node_modules/.bin/oxlint --config ../../oxlint.config.ts --deny-warnings src test",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "pnpm run clean && tsc -p tsconfig.build.json",
-    "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\"",
-    "test": "vitest run",
-    "docs": "tsx ../../tooling/repository/src/docs/cli.ts check --root ../..",
-    "docs:write": "tsx ../../tooling/repository/src/docs/cli.ts write --root ../..",
-    "format:check": "node ../../tooling/repository/scripts/format-package-check.mjs",
-    "lint:anti-slop": "node ../../tooling/repository/scripts/lint-package-anti-slop.mjs"
+    "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\""
   },
   "dependencies": {
-    "@fungi.computer/shiitake": "workspace:*",
-    "@fungi.computer/whistle": "workspace:*",
+    "@fungi.computer/shiitake": "0.18.1",
+    "@fungi.computer/whistle": "0.3.0",
     "zod": "4.4.3"
   },
   "devDependencies": {
