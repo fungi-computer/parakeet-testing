@@ -1,5 +1,12 @@
 # @fungi.computer/parakeet-testing
 
+## 0.2.35
+
+### Patch Changes
+
+- Updated dependencies
+  - @fungi.computer/shiitake@0.20.3
+
 ## 0.2.34
 
 ### Patch Changes

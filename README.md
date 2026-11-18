@@ -1,19 +1,22 @@
 # Parakeet Testing (`@fungi.computer/parakeet-testing`)
 
-Parakeet Testing provides shared fixtures for tests of Parakeet renderers. The
-fixtures model Shiitake Session activity and one extension catalog so each
-renderer can exercise the same extension and slash-completion cases.
+Parakeet Testing gives tests the same fake agent conversations, so every
+Parakeet view is checked against the same cases.
 
-## Install or set up
-
-```sh
-npm install --save-dev @fungi.computer/parakeet-testing
+```mermaid
+flowchart LR
+  Fixtures[Parakeet Testing fixtures] --> Test1[React view tests]
+  Fixtures --> Test2[Terminal view tests]
+  Fixtures -->|garden extension, slots, replies| Session[Fake Session]
 ```
 
-These are test fixtures, not a runtime dependency of a shipped renderer. Import
-them from `@fungi.computer/parakeet-testing` in your renderer's tests.
-
 ## Quick start
+
+Install it:
+
+```sh
+npm install @fungi.computer/parakeet-testing
+```
 
 This illustrative example gives a Session a running test extension slot and
 checks the fixture's response to a command:
@@ -35,6 +38,38 @@ const reply = await gardenCall("water", { bed: "fern" });
 The fixture test verifies slot construction and the garden reply in
 [`test/garden.test.ts`](test/garden.test.ts). Renderer tests should exercise
 their own Session and UI seams with these shared inputs.
+
+## Common tasks
+
+### Fake a running extension
+
+`gardenSlots()` builds a Session slot for a running test extension. See the
+Quick start.
+
+### Check a command's reply
+
+`gardenCall` answers a command like `water`. See the Quick start.
+
+### Know the limits
+
+See Limits and errors.
+
+## Reference
+
+### Overview
+
+Parakeet Testing provides shared fixtures for tests of Parakeet renderers. The
+fixtures model Shiitake Session activity and one extension catalog so each
+renderer can exercise the same extension and slash-completion cases.
+
+## Install or set up
+
+```sh
+npm install --save-dev @fungi.computer/parakeet-testing
+```
+
+These are test fixtures, not a runtime dependency of a shipped renderer. Import
+them from `@fungi.computer/parakeet-testing` in your renderer's tests.
 
 ## Core concepts
 
