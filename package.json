@@ -1,6 +1,6 @@
 {
   "name": "@fungi.computer/parakeet-testing",
-  "version": "0.2.62",
+  "version": "0.2.63",
   "author": "Levi <levi@technomancy.dev>",
   "description": "Test-only garden extension and slash-parity fixtures for a typed Shiitake Session, shared by every Parakeet-protocol renderer's tests",
   "type": "module",
@@ -24,7 +24,7 @@
     "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\""
   },
   "dependencies": {
-    "@fungi.computer/shiitake": "0.22.8",
+    "@fungi.computer/shiitake": "0.22.9",
     "@fungi.computer/whistle": "0.3.0",
     "zod": "4.4.3"
   },
