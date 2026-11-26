@@ -1,5 +1,11 @@
 # @fungi.computer/parakeet-testing
 
+## 0.2.74
+
+### Patch Changes
+
+- @fungi.computer/shiitake@0.23.6
+
 ## 0.2.73
 
 ### Patch Changes
